@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Summary</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Page Summary</h1>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Version</td>
+            <td>{{.Version}}</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>{{.Title}}</td>
+        </tr>
+        <tr>
+            <td>Header Count</td>
+            <td>
+                <ul>
+                    {{range $header, $count := .HeaderCount}}
+                    <li>{{$header}}: {{$count}}</li>
+                    {{end}}
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>External Links</td>
+            <td>
+                <ul>
+                    {{range .ExternalLinks}}
+                    <li><a href="{{.}}">{{.}}</a></li>
+                    {{end}}
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Internal Links</td>
+            <td>
+                <ul>
+                    {{range .InternalLinks}}
+                    <li><a href="{{.}}">{{.}}</a></li>
+                    {{end}}
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Accessible Link Count</td>
+            <td>{{.AccessibleLinkCount}}</td>
+        </tr>
+        <tr>
+            <td>Has Login Page</td>
+            <td>{{if .HasLoginPage}}Yes{{else}}No{{end}}</td>
+        </tr>
+    </table>
+    <a href="/">Home</a>
+</body>
+</html>
