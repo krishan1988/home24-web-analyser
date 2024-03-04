@@ -1,6 +1,9 @@
-FROM golang:1.19.2-alpine3.16
+FROM golang:1.21
+
 
 RUN mkdir /opt/home24-web-analyser
+
+RUN mkdir /opt/home24-web-analyser/bin
 
 ADD . /opt/home24-web-analyser
 
