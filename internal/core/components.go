@@ -30,13 +30,13 @@ func (n HTMLNode) IsExternalLink(selfURL string) (bool, error) {
 	}
 
 	externalURLParsed, err := url.Parse(href)
-	if err != nil {
-		return false, errors.New("invalid anchor href")
+	if err != nil || externalURLParsed.Host == ""{
+		return false, nil
 	}
 
 	internalURLParsed, err := url.Parse(selfURL)
 	if err != nil || internalURLParsed.Host == "" {
-		return false, errors.New("invalid internal URL")
+		return false, nil
 	}
 
 	return internalURLParsed.Host != externalURLParsed.Host, nil
