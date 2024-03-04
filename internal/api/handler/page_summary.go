@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
 	"regexp"
@@ -41,7 +42,8 @@ func GetPageSummaryHandler(tmpl *template.Template) gin.HandlerFunc {
 			return
 		}
 
-		selfUrl := ctx.Request.URL.String()
+		//selfUrl := ctx.Request.URL.String()
+		selfUrl := fmt.Sprintf("http://%v%v",ctx.Request.Host, ctx.Request.URL.String())
 		pageSummary, err := core.GetPageSummary(content.NewExtractor(rootNode), selfUrl)
 		if err != nil {
 			err := tmpl.ExecuteTemplate(ctx.Writer, "error.tmpl", gin.H{

@@ -48,3 +48,14 @@ Steps to run the application without Docker:
 
 Once the application starts running, open the browser and go to `http://localhost:8080` to access the web view.
 
+Enter the URL of the webpage you want to analyze into the input field and click the analyze button.
+
+View the analysis results presented on the webpage.
+
+# Contributors
+
+    Krishantha Jayasingha - [https://www.linkedin.com/in/kmadusanka/]
+
+# License
+
+This project is licensed under the MIT License.

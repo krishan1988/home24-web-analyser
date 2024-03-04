@@ -35,9 +35,12 @@ func GetPageSummary(extr content.Extractor, selfURL string) (*models.PageSummary
 				return
 			}
 			link, _ := HTMLNode(*n).AttrValue("href")
-			summary.AddExternalLink(link)
+			
 			if isExternal {
+				summary.AddExternalLink(link)
 				summary.CountLinkAsAccessible()
+			}else{
+				summary.AddInternalLink(link)
 			}
 
 		case "form":
