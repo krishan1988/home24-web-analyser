@@ -29,17 +29,6 @@ func GetPageSummaryHandler(tmpl *template.Template) gin.HandlerFunc {
 			return
 		}
 
-		// // If the URL is valid, create a sample PageSummary for demonstration
-		// pageSummary := models.PageSummary{
-		// 	Version:             "HTML5",
-		// 	Title:               "Sample HTML Document",
-		// 	HeaderCount:         map[string]int{"h1": 3, "h2": 5, "h3": 2},
-		// 	ExternalLinks:       []string{"https://example.com", "https://google.com"},
-		// 	InternalLinks:       []string{"/about", "/contact"},
-		// 	AccessibleLinkCount: 4,
-		// 	HasLoginPage:        true,
-		// }
-
 		rootNode, err := content.NewReaderWithUrl(url).Read()
 		if err != nil {
 			err := tmpl.ExecuteTemplate(ctx.Writer, "error.tmpl", gin.H{

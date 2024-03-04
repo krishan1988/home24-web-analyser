@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"os"
 	"os/signal"
 	"strconv"
@@ -18,8 +17,7 @@ func main() {
 
 	port, err := strconv.Atoi(portStr)
 	if err != nil {
-		log.Fatalf("Invalid port. Value: %v", portStr)
-		return
+		port =	8080
 	}
 
 	api.Configure(port)

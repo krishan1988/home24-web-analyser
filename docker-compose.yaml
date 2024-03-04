@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - 8080:8080
+    command: ./bin/home24-web-analyser
+    env_file:
+      - .env

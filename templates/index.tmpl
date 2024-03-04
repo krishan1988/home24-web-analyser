@@ -1,16 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Page Analyzer</title>
-</head>
-<body>
-    <h1>Web Page AnalyzerL</h1>
-    <form action="/summary" method="get">
-        <label for="url">Enter URL:</label>
-        <input type="text" id="url" name="url">
-        <button type="submit">Submit</button>
-    </form>
-</body>
+<html>
+   <head>
+      <title>Home 24 Web Analyser</title>
+   </head>
+   <body>
+
+      <H3>Home 24 Web Analyser</H3>
+      <p>You can search Website details from below search box</p>
+
+    <p>Enter a valid URL and Submit the form.</p>
+    <p>Valid URL Examples (i.e. https://www.google.com , https://www.facebook.com)</p>
+      <form action="/summary" method="get">
+         <div class="search-container">
+           
+            <input type="text" id="search" name="url" placeholder="Search Here for Websites.....">
+            <button type="submit">Submit</button>
+         </div>
+      </form>
+   </body>
+</html>
+<style type = "text/css">
+   body {
+   font-family: Georgia, sans-serif;
+   margin: 50px;
+   background-color: #cedaec;
+   text-align: center;
+   }
+   h1 {
+   color: #0B042E;
+   }
+   .search-container {
+   display: flex;
+   align-items: center;
+   max-width: 400px;
+   margin: 30px auto;
+   background-color: #7D7C83;
+   border: 1px solid white;
+   border-radius: 10px;
+   padding: 3px;
+   }
+   input[type="text"] {
+   flex: 1;
+   padding: 8px;
+   border: none;
+   border-radius: 5px 0 0 5px;
+   }
+   button {
+   padding: 8px 15px;
+   background-color: #228211 ;
+   color: #fff;
+   border: none;
+   border-radius: 0 5px 5px 0;
+   cursor: pointer;
+   }
+   button:hover {
+   background-color: #658E5E ;
+   }
+</style>
 </html>
